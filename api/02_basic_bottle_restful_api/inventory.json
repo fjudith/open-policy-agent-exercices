@@ -1,0 +1,28 @@
+{
+    "apiVersion": "v1",
+    "items": [{
+            "id": "663dc85d-2455-466c-b2e5-76691b0ce14e",
+            "model": "Honda",
+            "vehicle_id": "127482",
+            "owner_id": "742"
+        },
+        {
+            "id": "6c018cfa-e9c2-4169-a61b-dd3bf3bc19a7",
+            "model": "Toyota",
+            "vehicle_id": "19019",
+            "owner_id": "742"
+        },
+        {
+            "id": "879a273c-a8dc-41a6-9c30-2bb92288e93b",
+            "model": "Ford",
+            "vehicle_id": "3784312",
+            "owner_id": "6928"
+        },
+        {
+            "id": "fca3ab25-a151-4c76-b238-9aa6ee92c374",
+            "model": "Honda",
+            "vehicle_id": "22781",
+            "owner_id": "30390"
+        }
+    ]
+}
