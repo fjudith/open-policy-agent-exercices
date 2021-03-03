@@ -7,7 +7,7 @@ import os
 import json
 import requests
 import logging
-from bottle import Bottle, run, abort, request, response, get , put, delete, hook, route
+from bottle import run, abort, request, response, get , put, delete, hook
 
 # Remove "hop-by-hop" headers (as defined by RFC2613, Section 13)
 # since they are not allowed by the WSGI standard.
@@ -86,7 +86,7 @@ def car_detail(id):
     response.content_type = 'application/json'
     return dict({'result': cars[id]})
 
-@put('/car/<id>')
+@put('/cars/<id>')
 def car_update(id):
     cars[id] = request.json
     response.content_type = 'application/json'

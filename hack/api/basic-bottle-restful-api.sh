@@ -1,4 +1,7 @@
 #!/bin/bash
 docker-compose \
---file ./api/basic_bottle_restful_api/docker-compose.yaml \
+--file ./api/basic-bottle-restful-api/docker-compose.yaml \
+build && \
+docker-compose \
+--file ./api/basic-bottle-restful-api/docker-compose.yaml \
 up

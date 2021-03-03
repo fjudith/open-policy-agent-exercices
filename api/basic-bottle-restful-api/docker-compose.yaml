@@ -19,3 +19,4 @@ services:
       - run
       - --server
       - /var/lib/opa/apiserver.rego
+
