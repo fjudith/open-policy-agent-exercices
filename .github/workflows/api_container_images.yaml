@@ -72,7 +72,7 @@ jobs:
         id: quay
         uses: docker/build-push-action@v2
         with:
-          context: ./api/${{ matrix.image }})
+          context: ./api/${{ matrix.image }}
           push: true
           tags: quay.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_MAJOR }},quay.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_MINOR }},quay.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_PATCH }},quay.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_TAG }},quay.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:latest
           file: ${{ env.DOCKERFILE }}
