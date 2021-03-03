@@ -1,0 +1,1 @@
+docker build -f ./api/basic_flask_restful_api/Dockerfile -t fjudith/basic-flask-restful-api ./api/basic_flask_restful_api/
