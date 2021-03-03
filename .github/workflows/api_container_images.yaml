@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - uses: FranzDiebold/github-env-vars-action@v1.2.1
-      
+
       - name: Checkout code base
         uses: actions/checkout@v2
 
@@ -58,10 +58,10 @@ jobs:
         id: dockerhub
         uses: docker/build-push-action@v2
         with:
-          context: ./api/${{ matrix.image }})
+          context: ./api/${{ matrix.image }}
           push: true
           tags: docker.io/${{ matrix.image }}:${{ env.SEMVER_MAJOR }},docker.io/${{ matrix.image }}:${{ env.SEMVER_MINOR }},docker.io/${{ matrix.image }}:${{ env.SEMVER_PATCH }},docker.io/${{ matrix.image }}:${{ env.SEMVER_TAG }},docker.io/${{ matrix.image }}:latest
-          file: ./api/${{ matrix.image }})"/Dockerfile
+          file: ./api/${{ matrix.image }}/Dockerfile
           platforms: linux/amd64
       
       - name: Push image to Quay
