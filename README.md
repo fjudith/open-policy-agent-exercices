@@ -1,3 +1,5 @@
+[![API Container Images](https://github.com/fjudith/open-policy-agent-exercices/actions/workflows/api_container_images.yaml/badge.svg)](https://github.com/fjudith/open-policy-agent-exercices/actions/workflows/api_container_images.yaml)
+
 # Open Policy Agent Examples
 
 The Open Policy Agent (OPA , pronounced "oh-pa") is an open source, general-purpose policy engin that unifies policy enforcement across the stack.
