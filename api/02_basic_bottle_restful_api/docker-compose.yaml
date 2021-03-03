@@ -1,0 +1,21 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  api:
+    build: ./
+    image: fjudith/basic-bottle-restful-api
+    environment:
+      OPA_URL: http://opa:8181
+    ports:
+      - "8080:8080"
+    links:
+      - opa
+  opa:
+    image: docker.io/openpolicyagent/opa:0.26.0
+    expose:
+      - "8181/tcp"
+    volumes:
+      - "./apiserver.rego:/var/lib/opa/apiserver.rego"
+    command:
+      - run
+      - --server
+      - /var/lib/opa/apiserver.rego
