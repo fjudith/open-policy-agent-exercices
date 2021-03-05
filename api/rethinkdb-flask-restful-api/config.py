@@ -18,6 +18,7 @@ parser.add_argument('--rethinkdb-host', help='Specifies the remote RethinkDB ser
 parser.add_argument('--rethinkdb-port', help='Specifies the remote RethinkDB server port.', default=os.environ.get('RDB_PORT', 28015))
 parser.add_argument('--rethinkdb-database', help='Specifies the RethinkDB database name.', default=os.environ.get('RDB_DB', 'fakenames'))
 parser.add_argument('--rethinkdb-table', help='Specifies the RethinkDB table name.', default=os.environ.get('RDB_TBL', 'fakenames'))
+parser.add_argument('--rethinkdb-primary-key', help='Specifies the RethinkDB table primary key.', default=os.environ.get('RDB_PKEY', 'guid'))
 # open policy agent config
 parser.add_argument('-u', '--opa-url', help='Specifies the OPA proxy server URL.', default=os.environ.get('OPA_URL', 'http://localhost:8181'))
 
