@@ -1,0 +1,25 @@
+Create a person based on the sent information
+---
+tags:
+  - person
+parameters:
+  - name: guid
+    in: path
+    type: string
+    description: the globally unique identifer (GUID) of the person
+  - name: body
+    in: body
+    schema:
+      type: object
+      properties:
+        age:
+          type: integer
+          description: The age of the person
+responses:
+  200:
+    description: The person was successfully created
+    schema:
+      example:
+        person:
+          guid: 76479cc3-fd02-4669-bb99-4a1968ccd9ce
+          age: 19

@@ -1,0 +1,34 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  api:
+    build: ./
+    image: fjudith/basic-flask-restful-api
+    environment:
+      OPA_URL: http://opa:8181
+    ports:
+      - "8080:8080"
+    links:
+      - opa
+      - cockroach
+  opa:
+    image: docker.io/openpolicyagent/opa:0.26.0
+    expose:
+      - "8181/tcp"
+    volumes:
+      - "./apiserver.rego:/var/lib/opa/apiserver.rego"
+    command:
+      - run
+      - --server
+      - /var/lib/opa/apiserver.rego
+  cockroachkdb:
+    image: docker.io/amd64/cockroachkdb:20.2.5
+    ports: ["58080:8080"]
+    command:
+      - cockroach
+      - start-single-node
+      - --insecure
+    expose:
+      - "29015/tcp"
+      - "28015/tcp"
+    
+

@@ -1,0 +1,25 @@
+Update an user based on the sent information
+---
+tags:
+  - person
+parameters:
+  - name: guid
+    in: path
+    type: string
+    description: the globally unique identifier of the person
+  - name: body
+    in: body
+    schema:
+      type: object
+      properties:
+        age:
+          type: integer
+          description: The age of the person
+responses:
+  200:
+    description: The user was successfully created
+    schema:
+      example:
+        person:
+          guid: 1234abcd-1234-abcd-1234-abcd1234abcd
+          age: 120

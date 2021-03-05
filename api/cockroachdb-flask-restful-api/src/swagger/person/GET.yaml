@@ -1,0 +1,60 @@
+Return a person key information based on his name
+---
+tags:
+  - person
+parameters:
+  - name: guid
+    in: path
+    type: string
+    description: the guid of a given person
+responses:
+  200:
+    description: The person's information were successfully retrieved
+    schema:
+      example:
+        person:
+          number: 1000
+          gender: female
+          nameset: French
+          title: Mrs.
+          givenname: Noémi
+          middleinitial: P
+          surname: CinqMars
+          streetaddress: 45 boulevard de la Liberation
+          city: MARSEILLE
+          state: PA
+          statefull: Provence-Alpes-Côte d'Azur
+          zipcode: 13011
+          country: FR
+          countryfull: France
+          emailaddress: NoemiCinqMars@cuvox.de
+          username: Musaing1945
+          password: joh0aedohToo
+          browseruseragent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0
+          telephonenumber: 04.35.79.49.47
+          telephonecountrycode: 33
+          maidenname: Berthiaume
+          birthday: 10/26/1945
+          age: 75
+          tropicalzodiac: Scorpio
+          cctype: Visa
+          ccnumber: 4929048345418031
+          cvv2: 696
+          ccexpires: 4/2024
+          nationalid: 2451052015285 81
+          upstracking: 1Z 5E5 485 04 3996 319 8
+          westernunionmtcn: 7977600254
+          moneygrammtcn: 04677742
+          color: Purple
+          occupation: Aircraft engineer
+          company: Integra Investment Plan
+          vehicle: 2000 Audi A8
+          domain: GlobalUpset.fr
+          bloodtype: O+
+          pounds: 150.9
+          kilograms: 68.6
+          feetinches: 5' 2"
+          centimeters: 158
+          guid: 76479cc3-fd02-4669-bb99-4a1968ccd9ce
+          latitude: 43.246638
+          longitude: 5.479804
