@@ -14,7 +14,7 @@ class DatasetRepository:
 
     # download and import the dataset in cockroachdb
     @staticmethod
-    def upload(url):
+    def create(url):
         """ Import a dataset from a download url """
 
         logger.info('Download dataset URL:"{0}"'.format(url))
@@ -45,4 +45,3 @@ class DatasetRepository:
                 except RqlRuntimeError:
                     abort(503, "Record cloud not be inserted.")
                 return person.save()
-
