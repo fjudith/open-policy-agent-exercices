@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser()
 parser.parse_known_args()
 # applicaiton config
 parser.add_argument('--appname', help='Specifies the application name.', default=os.environ.get('APPNAME', 'fakenames'))
-parser.add_argument('--listen-address', help='Specifies the application listen address.', default=os.environ.get('LISTEN', '127.0.0.1'))
+parser.add_argument('--listen-address', help='Specifies the application listen address.', default=os.environ.get('LISTEN', 'localhost'))
 parser.add_argument('--listen-port', help='Specifies the application listen port.', default=os.environ.get('PORT', '3000'))
 parser.add_argument('--service-root', help='Specifies the web service root path.', default=os.environ.get('SERVICE_ROOT', '/apis'))
 # rethinkdb config
