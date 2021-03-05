@@ -8,7 +8,7 @@ from contextlib import closing
 
 from models import rdb
 from config import args, logger
-from flask import abort
+from flask import abort, g
 
 from rethinkdb.errors import RqlRuntimeError, RqlDriverError
 
@@ -31,7 +31,7 @@ class DatasetRepository:
 
         # connect to the database
         try:
-            rdb_conn = rdb.connect(host=args.rethinkdb_host, port=args.rethinkdb_port, db=args.rethinkdb_database)
+            g.rdb_conn = rdb.connect(host=args.rethinkdb_host, port=args.rethinkdb_port, db=args.rethinkdb_database)
         except RqlDriverError:
             abort(503, "Database connection could be established.")
 
@@ -41,6 +41,6 @@ class DatasetRepository:
             reader = csv.DictReader(f)
             for data in reader:
                 try:
-                    rdb.table(args.rethinkdb_table).insert(data).run(rdb_conn)
+                    rdb.table(args.rethinkdb_table).insert(data).run(g.rdb_conn)
                 except RqlRuntimeError as e:
                     abort(503, f'Record cloud not be inserted. Message: {e}')
