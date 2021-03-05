@@ -1,0 +1,23 @@
+Import data from a dataset url to the database
+---
+tags:
+  - fakenames
+  - dataset
+  - person
+parameters:
+  - name: body
+    in: body
+    schema:
+      type: object
+      properties:
+        url:
+          type: string
+          description: The url of the dataset to be imported in the database
+responses:
+  200:
+    description: The dataset has been successfully imported in the database
+    schema:
+      example:
+        person:
+          guid: 76479cc3-fd02-4669-bb99-4a1968ccd9ce
+          age: 19
